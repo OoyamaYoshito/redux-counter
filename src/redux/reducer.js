@@ -1,8 +1,11 @@
 import * as types from "./types";
+import cloneDeep from "lodash.clonedeep";
 
 const reducters={
     [types.COUNT_UP](old_state,action){
-        return old_state+1
+        const state = cloneDeep(old_state)
+        state.count++;
+        return state;
     },
 };
 
